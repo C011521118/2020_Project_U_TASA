@@ -1,0 +1,14 @@
+public class Main {
+    public static void main(String[] args) {
+    HashTable hash = new HashTable(5);
+    hash.put(123, "abc");
+    hash.put(456, "def");
+    hash.put(789, "ghi");
+
+    Object o;
+    o = hash.get(123);
+    System.out.println(o);
+    o = hash.get(777);
+    System.out.println(o);
+    }
+}
