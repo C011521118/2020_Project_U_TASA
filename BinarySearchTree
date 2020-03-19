@@ -1,0 +1,64 @@
+class Node {
+
+    int data;
+    Node left;
+    Node right;
+}
+
+public class BinarySearchTree {
+
+    private Node root;
+
+    public void add(int data) {
+        // ツリーがない場合の特別処理
+        if (root == null) {
+            root = new Node();
+            root.data = data;
+            return;
+        }
+
+        // 現在ノードをルートノードとする
+        Node current = root;
+        while (true) {
+            // 「追加する値 ＜ 現在ノードの値」なら左の子を対象とする
+            if (data < current.data) {
+                // 次のノードが存在しない場合はその位置にデータを追加する
+                if (current.left == null) {
+                    current.left = new Node();
+                    current.left.data = data;
+                    return;
+                }
+                // 存在する場合は次のノードを現在ノードとして繰り返す
+                current = current.left;
+            } // 「現在ノードの値 ≦ 追加する値」なら右の子を対象とする
+            else if (current.data <= data) {
+                if (current.right == null) {
+                    current.right = new Node();
+                    current.right.data = data;
+                    return;
+                }
+                current = current.right;
+            }
+        }
+    }
+
+    public boolean contains(int data) {
+        // 現在ノードをルートノードとする
+        Node current = root;
+        // 次のノードが存在しない場合は探索終了
+        while (current != null) {
+            // 等しければ探索終了
+            if (current.data == data) {
+                return true;
+            } // 「探索値 ＜ 現在ノードの値」なら左の子に進む
+            else if (data < current.data) {
+                current = current.left;
+            } // 「現在ノードの値 ＜ 探索値」なら右の子に進む
+            else if (current.data < data) {
+                current = current.right;
+            }
+        }
+        return false;
+    }
+    
+}
