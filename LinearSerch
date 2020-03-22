@@ -1,0 +1,12 @@
+public class LinearSearch {
+    public static int linearSearch(int[] a, int key) {
+        int i = 0;
+        while (i < a.length) {
+            if (a[i] == key) {
+                return i;
+            }
+            i = i + 1;
+        }
+        return -1;
+    }
+}
