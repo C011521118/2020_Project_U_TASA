@@ -4,7 +4,7 @@
 #define COLUMN 9
 
 
-/* teo dimensional array */
+/* two dimensional array */
 
 
 int main() {
