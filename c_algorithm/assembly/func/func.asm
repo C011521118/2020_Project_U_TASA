@@ -20,7 +20,7 @@ _odd_or_even:			; void _odd_or_even(int num);
 	mov	rbx,rdi
 	mov	rdx,0x00
 	mov	rcx,0x02
-	div rcx
+	div 	rcx
 	cmp	rdx,0x00
 	je	_even
 	jmp	_odd
